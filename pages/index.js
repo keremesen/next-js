@@ -1,13 +1,10 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
-import { useToast } from "@chakra-ui/react"
+import { useToast } from "@chakra-ui/react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
-
 export default function Home() {
-  function ErrorToast() {
-    const toast = useToast()
-  }
+  const toast = useToast();
   return (
     <Flex
       bgColor="red.300"
@@ -19,11 +16,18 @@ export default function Home() {
     >
       <Heading>SARKI ONERME SITESI</Heading>
       <Button
-onClick={()=> alert("kardesim dur daha yapmadik yapim asamasinda")}
-    >
-      tikla ve rasgele sarkin calsin
-    </Button>
+        onClick={() =>
+          toast({
+            title: "kardesim dur bi daha yapmadık",
+            description: "yapmaya calisiyoz",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+          })
+        }
+      >
+        tikla ve rasgele sarkin calsin
+      </Button>
     </Flex>
   );
 }
-
