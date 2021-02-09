@@ -1,20 +1,22 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import Lottie from "react-lottie";
+import animationData from '../public/43988-walkwalk.json'
 
 export default function Home() {
   const toast = useToast();
   return (
     <Flex
-      bgColor="red.300"
+      bgColor="tomato"
       w="100vw"
       h="100vh"
       align="center"
       justify="space-evenly"
       direction="column"
     >
-      <Heading>SARKI ONERME SITESI</Heading>
+<Lottie width={200} height={200}
+options={{loop:true, autoplay:true, animationData}} ></Lottie>
+      {/* <Heading>SARKI ONERME SITESI</Heading>
       <Button
         onClick={() =>
           toast({
@@ -27,7 +29,7 @@ export default function Home() {
         }
       >
         tikla ve rasgele sarkin calsin
-      </Button>
+      </Button> */}
     </Flex>
   );
 }
